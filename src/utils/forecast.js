@@ -10,7 +10,13 @@ const forecast = (lat,long,callback) => {
             callback('Unable to find location')
         }else{
             const data = body.currently
-            callback(undefined,data.summary+'. It is currently '+data.temperature+' degrees out. There is '+data.precipProbability+'% chance of rain.')
+            const forecast = {summary: data.summary,
+                            temperature: data.temperature,
+                            rain: data.precipProbability,
+                            humidity: data.humidity,
+                            visibility: data.visibility,
+                            cloud: data.cloudCover}
+            callback(undefined,forecast)
             }
         
     })

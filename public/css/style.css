@@ -55,3 +55,8 @@ form button {
     font-family: Arial;
     padding: 8px;
 }
+
+.icons img {
+    width: 32px;
+    margin-right: 6px;
+}
